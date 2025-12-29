@@ -1,0 +1,345 @@
+# YOLO11 OBB Training - Git Ignore File
+
+# =============================================================================
+# YOLO/Ultralytics specific files
+# =============================================================================
+
+# Pre-trained model files (too large for git)
+# *.pt
+*.onnx
+*.engine
+*.torchscript
+*.pb
+
+# Training runs and experiments
+# runs/
+wandb/
+
+# Model outputs and checkpoints
+models/
+# weights/
+checkpoints/
+
+# Ultralytics cache and temporary files
+.ultralytics/
+yolo_*.cache
+*.cache
+
+# =============================================================================
+# Dataset files (usually too large for git)
+# =============================================================================
+
+# Image files
+# *.jpg
+*.jpeg
+*.png
+*.bmp
+*.tiff
+*.tif
+*.webp
+
+# Video files
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.wmv
+*.flv
+
+# Dataset archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Dataset directories (uncomment if you want to exclude entire dataset)
+datasets/
+# data/
+
+# Label files (uncomment if datasets are large)
+# *.txt
+
+# =============================================================================
+# Python specific
+# =============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# =============================================================================
+# ML/AI specific
+# =============================================================================
+
+# TensorBoard logs
+logs/
+tensorboard_logs/
+tb_logs/
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Weights & Biases
+wandb/
+
+# Neptune
+.neptune/
+
+# DVC
+.dvc/
+
+# Experiment tracking
+experiments/
+outputs/
+artifacts/
+
+# =============================================================================
+# System and IDE files
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+~$*
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# =============================================================================
+# Project specific (uncomment as needed)
+# =============================================================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+scripts/
+
+# Log files
+*.log
+
+# Configuration files with secrets (uncomment if needed)
+# config.yml
+# secrets.yml
+# .env
+
+# Custom experiment directories
+# my_experiments/
+# custom_runs/
+
+# Testing outputs
+# test_outputs/
+# predictions/
+# inference_results/
+
+# Custom ommisions
+dataset/
+runs/test
+runs/test-evaluation/
+heading/
+out/
+*.csv
