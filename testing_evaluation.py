@@ -10,9 +10,9 @@ import time
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', type=str, default='runs/train/yolo11n-moorebot_v1-obb-v1/weights/best.pt',
+    parser.add_argument('--model', type=str, default='runs/train/yolo11n-panther_v1-pose-v1/weights/best.pt',
                         help='Path to trained model .pt')
-    parser.add_argument('--data', type=str, default='./datasets/moorebot_v1/data.yaml', help='Path to data.yaml')
+    parser.add_argument('--data', type=str, default='./dataset/version-1/data.yaml', help='Path to data.yaml')
     parser.add_argument('--save-dir', type=str, default=None,
                         help='Directory to save evaluation results. Defaults to ./runs/test-evaluation/<model-name>/')
     return parser.parse_args()
