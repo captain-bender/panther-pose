@@ -5,6 +5,7 @@ import os
 from math import sqrt
 from datetime import datetime
 from multiprocessing import freeze_support
+import json
 
 KEYPOINT_NAMES = ["back-left", "front", "back-right"]
 
@@ -245,7 +246,7 @@ def calculate_pck(model, test_dir, labels_dir, alphas=(0.1, 0.2), iou_thresh=0.5
     }
 
 
-def plot_per_keypoint_pck(pck_metrics, keypoint_names=None, out_dir="runs/pose/pck", alphas=(0.1, 0.2)):
+def plot_per_keypoint_pck(pck_metrics, keypoint_names=None, out_dir="runs/pose-metrics/<model-name>/pck", alphas=(0.1, 0.2)):
     try:
         import matplotlib.pyplot as plt
     except Exception as e:
@@ -557,20 +558,66 @@ if __name__ == '__main__':
     freeze_support()
     
     # Load your trained model
-    model = YOLO('runs/train/yolo11n-panther_v1-pose-v1/weights/best.pt')
+    weight_path = 'runs/train/yolo11n-panther_v1-pose-v1/weights/best.pt'
+    model_name = os.path.basename(os.path.dirname(os.path.dirname(weight_path)))
+    model = YOLO(weight_path)
+
+    # Prepare model-specific output directories
+    out_root = os.path.join("runs", "pose-metrics", model_name)
+    os.makedirs(out_root, exist_ok=True)
+    # Do NOT pre-create the yolo_eval folder: Ultralytics will create
+    # `yolo_eval`, `yolo_eval2`, ... automatically. If we pre-create an
+    # empty `yolo_eval` dir, Ultralytics will create `yolo_eval2` instead.
+    # We'll detect which folder was actually created after evaluation.
+    yolo_eval_dir = None
 
     print("POSE ESTIMATION QUALITY METRICS")
     print("=" * 50)
 
     # 1. Standard YOLO validation metrics
     print("\nSTANDARD YOLO METRICS:")
+    # Direct Ultralytics evaluation outputs into the model-specific folder
+    # Force evaluation outputs into our project/name folder to override defaults
     results = model.val(
         data="./dataset/version-1/data.yaml",
         split='test',
-        imgsz=1280,
+        imgsz=1920,
         batch=4,
-        verbose=False
+        verbose=True,
+        save=True,
+        project=out_root,
+        name='yolo_eval'
     )
+
+    # Detect the actual evaluation folder created by Ultralytics (yolo_eval, yolo_eval2, ...)
+    try:
+        eval_candidates = [d for d in os.listdir(out_root) if d.startswith('yolo_eval')]
+        eval_candidates = sorted(eval_candidates)
+        actual_eval_dir = None
+        for d in eval_candidates:
+            full = os.path.join(out_root, d)
+            # prefer directory that contains files
+            try:
+                if os.path.isdir(full) and os.listdir(full):
+                    actual_eval_dir = full
+                    break
+            except Exception:
+                continue
+
+        # If none have files, pick the newest candidate directory if any
+        if actual_eval_dir is None and eval_candidates:
+            latest = max(eval_candidates, key=lambda x: os.path.getmtime(os.path.join(out_root, x)))
+            actual_eval_dir = os.path.join(out_root, latest)
+
+        if actual_eval_dir:
+            print(f"  YOLO evaluation outputs written to: {actual_eval_dir}")
+        else:
+            print(f"  No YOLO evaluation folder found under {out_root}")
+
+        # Use detected folder for any future references if needed
+        yolo_eval_dir = actual_eval_dir
+    except Exception as e:
+        print(f"  Warning: failed to detect YOLO eval folder: {e}")
 
     # Extract pose-specific metrics
     if hasattr(results, 'pose') and results.pose is not None:
@@ -618,7 +665,8 @@ if __name__ == '__main__':
                 print(f"     - {_kpt_name(k_idx, KEYPOINT_NAMES)}: {val:.3f} ({corr}/{tot})")
 
         try:
-            plot_per_keypoint_pck(pck_metrics, keypoint_names=KEYPOINT_NAMES, alphas=(0.1, 0.2))
+            out_dir = os.path.join("runs", "pose-metrics", model_name, "pck")
+            plot_per_keypoint_pck(pck_metrics, keypoint_names=KEYPOINT_NAMES, out_dir=out_dir, alphas=(0.1, 0.2))
         except Exception as e:
             print(f"  Failed to plot per-keypoint PCK: {e}")
 
