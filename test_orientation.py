@@ -194,6 +194,27 @@ def main():
 
         # Access results
         for result in results:
+            # Print detection (box) confidence(s) first, if available.
+            try:
+                if getattr(result, 'boxes', None) is not None and getattr(result.boxes, 'conf', None) is not None:
+                    import torch
+                    box_conf = result.boxes.conf
+                    box_conf_np = box_conf.detach().cpu().numpy() if isinstance(box_conf, torch.Tensor) else box_conf
+                    box_conf_list = [float(x) for x in box_conf_np.reshape(-1)]
+                    if box_conf_list:
+                        mean_box_conf = statistics.mean(box_conf_list)
+                        min_box_conf = min(box_conf_list)
+                        max_box_conf = max(box_conf_list)
+                        print(f"   Detections: {len(box_conf_list)} | box conf mean={mean_box_conf:.3f}, min={min_box_conf:.3f}, max={max_box_conf:.3f}")
+                        for di, dc in enumerate(box_conf_list):
+                            print(f"     det[{di}] box conf: {dc:.3f}")
+                    else:
+                        print("   Detections: 0")
+                else:
+                    print("   Detections: (boxes/conf not available)")
+            except Exception as e:
+                print(f"   Warning: failed to print box confidences: {e}")
+
             # Plot first so we can access the palette used for keypoints
             annotated_frame = result.plot()
 
@@ -265,13 +286,9 @@ def main():
                 except Exception as e:
                     print(f"   Warning: failed to print per-keypoint confidences/colors: {e}")
 
-            # Build structured output directory under tests/
-            dataset_name = Path(args.dataset).name
+            # Save results under runs/test-orientation/<model-name>/
             model_name = Path(args.model).parent.parent.name if 'weights' in args.model else Path(args.model).stem
-            timestamp = datetime.now().strftime('%Y%m%d-%H%M%S')
-            tag = args.tag.strip().replace(' ', '_')
-            base_dir = Path('tests') / dataset_name / args.split / model_name
-            out_dir = base_dir / (tag if tag else timestamp)
+            out_dir = Path('runs') / 'test-orientation' / model_name
             out_dir.mkdir(parents=True, exist_ok=True)
 
             output_path = out_dir / f"{img_name}"
