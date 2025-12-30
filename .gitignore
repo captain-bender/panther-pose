@@ -338,8 +338,8 @@ scripts/
 
 # Custom ommisions
 dataset/
-runs/test
-runs/test-evaluation/
+runs/pose-metrics/
+runs/test-orientation/
 heading/
 out/
 *.csv
