@@ -32,7 +32,7 @@ yolo_*.cache
 # Image files
 # *.jpg
 *.jpeg
-*.png
+# *.png
 *.bmp
 *.tiff
 *.tif
@@ -341,5 +341,6 @@ dataset/
 runs/pose-metrics/
 runs/test-orientation/
 heading/
+heading_plots/
 out/
 *.csv
