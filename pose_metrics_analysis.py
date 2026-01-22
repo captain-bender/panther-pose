@@ -123,7 +123,7 @@ def calculate_pose_metrics(model, test_dir, labels_dir):
     
     print(f"   Analyzing {len(test_images)} test images...")
     
-    for img_name in test_images[:10]:  # Limit to first 10 for speed
+    for img_name in test_images:  # Limit to first 10 for speed
         img_path = os.path.join(test_dir, img_name)
         
         # Get predictions
