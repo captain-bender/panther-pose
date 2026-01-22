@@ -340,7 +340,9 @@ scripts/
 dataset/
 runs/pose-metrics/
 runs/test-orientation/
+runs/test-evaluation/
 heading/
 heading_plots/
 out/
+
 *.csv
