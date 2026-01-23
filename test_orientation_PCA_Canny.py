@@ -206,7 +206,7 @@ def _draw_ray(img, x, y, angle_deg, length=120, color=(0, 255, 255), thickness=2
     dy =  math.sin(rad)
     x2 = int(round(x + dx * length))
     y2 = int(round(y + dy * length))
-    cv2.line(img, (int(round(x)), int(round(y))), (x2, y2), color, thickness, cv2.LINE_AA)
+    cv2.arrowedLine(img, (int(round(x)), int(round(y))), (x2, y2), color, thickness, tipLength=0.2)
 
 def calculate_heading_from_bracket(
     img_bgr: np.ndarray,
