@@ -1,0 +1,134 @@
+Speed: 5.3ms preprocess, 22.7ms inference, 0.0ms loss, 0.6ms postprocess per image
+Results saved to C:\Users\Bende\Documents\panther-pose\runs\pose-metrics\yolo11n-panther_v1-pose-v1\yolo_eval2
+  YOLO evaluation outputs written to: runs\pose-metrics\yolo11n-panther_v1-pose-v1\yolo_eval
+ Pose mAP50:     0.9950
+ Pose mAP50-95:  0.9950
+ Pose mAP75:     0.9950
+ Box mAP50:      0.9950
+ Box mAP50-95:   0.9906
+
+POSE-SPECIFIC QUALITY METRICS:
+   Analyzing 40 test images...
+ Images analyzed:           40
+ Avg keypoints per image:   3.00
+ Keypoint detection rate:   1.00
+
+ PCK METRICS:
+   PCK@0.1: 1.000  (120/120 keypoints)
+   PCK@0.2: 1.000  (120/120 keypoints)
+   Matched predictions/GT pairs: 40/40
+   Per-keypoint PCK@0.1:
+     - back-left: 1.000 (40/40)
+     - front: 1.000 (40/40)
+     - back-right: 1.000 (40/40)
+   Per-keypoint PCK@0.2:
+     - back-left: 1.000 (40/40)
+     - front: 1.000 (40/40)
+     - back-right: 1.000 (40/40)
+  Per-keypoint PCK plot saved: runs\pose-metrics\yolo11n-panther_v1-pose-v1\pck\pck_per_keypoint_20260122-184341.png
+
+OKS METRICS:
+   OKS AP@[.50:.95]: 0.987
+   OKS AP@0.50:      0.990
+   OKS AP@0.75:      0.990
+
+ Distribution (matched pairs):
+   count: 40, mean: 0.974, median: 0.973, max: 0.995
+   share >= 0.50: 1.000
+   share >= 0.60: 1.000
+   share >= 0.70: 1.000
+   share >= 0.75: 1.000
+   share >= 0.80: 1.000
+   share >= 0.90: 1.000
+
+KEYPOINT CONFIDENCE
+   samples: 120
+   mean / median / std: 0.999 / 0.999 / 0.002
+   share >= 0.3: 1.000
+   share >= 0.5: 1.000
+   share >= 0.7: 1.000
+   per-detection avg confidence (mean/median): 0.999 / 0.999
+   Per-keypoint mean confidence:
+     - back-left: 0.998 (n=40, share>=0.5: 1.000)
+     - front: 1.000 (n=40, share>=0.5: 1.000)
+     - back-right: 0.999 (n=40, share>=0.5: 1.000)
+
+========================================================================
+HEADING ERROR SUMMARY (perpendicular-to-base; 0=left, 90=down)
+========================================================================
+Samples (pose matches): 40
+
+Metric                         Value
+--------------------------------------
+Mean abs error (°)                  2.81
+Median abs error (°)                2.35
+Std abs error (°)                   2.10
+P90 abs error (°)                   6.24
+P95 abs error (°)                   6.93
+Min / Max abs error (°)             0.32 /    10.17
+Mean signed error (°)               0.85
+Median signed error (°)             0.87
+Within 5° / 10° (%)                 87.5 /    97.5
+========================================================================
+
+V1 summary:
+
+========================================================================
+HEADING ERROR SUMMARY (perpendicular-to-base; 0=left, 90=down)
+========================================================================
+Samples (pose matches): 40
+
+Metric                         Value
+--------------------------------------
+Mean abs error (°)                  2.81
+Median abs error (°)                2.35
+Std abs error (°)                   2.10
+P90 abs error (°)                   6.24
+P95 abs error (°)                   6.93
+Min / Max abs error (°)             0.32 /    10.17
+Mean signed error (°)               0.85
+Median signed error (°)             0.87
+Within 5° / 10° (%)                 87.5 /    97.5
+========================================================================
+
+V2 summary:
+
+========================================================================
+HEADING ERROR SUMMARY (perpendicular-to-base; 0=left, 90=down)
+========================================================================
+Samples (pose matches): 40
+
+Metric                         Value
+--------------------------------------
+Mean abs error (°)                  1.81
+Median abs error (°)                1.58
+Std abs error (°)                   1.05
+P90 abs error (°)                   3.14
+P95 abs error (°)                   3.79
+Min / Max abs error (°)             0.05 /     4.21
+Mean signed error (°)               0.87
+Median signed error (°)             1.19
+Within 5° / 10° (%)                100.0 /   100.0
+========================================================================
+
+Estimated V2 heading bias (pred-gt): +0.865°
+
+V2 summary (bias-corrected):
+
+========================================================================
+HEADING ERROR SUMMARY (perpendicular-to-base; 0=left, 90=down)
+========================================================================
+Samples (pose matches): 40
+
+Metric                         Value
+--------------------------------------
+Mean abs error (°)                  1.57
+Median abs error (°)                1.50
+Std abs error (°)                   1.09
+P90 abs error (°)                   3.03
+P95 abs error (°)                   3.36
+Min / Max abs error (°)             0.11 /     3.72
+Mean signed error (°)              -0.00
+Median signed error (°)             0.33
+Within 5° / 10° (%)                100.0 /   100.0
+========================================================================
