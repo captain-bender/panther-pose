@@ -6,6 +6,9 @@ from pathlib import Path
 import yaml
 import subprocess
 import time
+import json
+import csv
+import numpy as np
 
 
 def parse_args():
@@ -16,6 +19,122 @@ def parse_args():
     parser.add_argument('--save-dir', type=str, default='./runs/test-evaluation/yolo11n-panther_v1-pose-v1/',
                         help='Directory to save evaluation results. Defaults to ./runs/test-evaluation/<model-name>/')
     return parser.parse_args()
+
+
+def extract_keypoint_accuracy(pred, gt, img_path, model):
+    """
+    Calculate per-point accuracy metrics for a single image.
+    
+    Args:
+        pred: Prediction result from model
+        gt: Ground truth annotation (from YOLO labels)
+        img_path: Path to the image
+        model: YOLO model for reference
+    
+    Returns:
+        dict with image metrics including scores and per-point accuracies
+    """
+    metrics = {
+        'image': Path(img_path).name,
+        'score': 0.0,
+    }
+    
+    # Extract confidence score from predictions
+    if pred.boxes is not None and len(pred.boxes) > 0:
+        # Get highest confidence box
+        metrics['score'] = float(pred.boxes.conf[0]) if len(pred.boxes.conf) > 0 else 0.0
+    
+    # Extract keypoint predictions and confidences
+    if pred.keypoints is not None and pred.keypoints.data is not None:
+        keypoints_data = pred.keypoints.data
+        
+        # keypoints_data shape: [num_detections, num_keypoints, 3] (x, y, confidence)
+        if len(keypoints_data) > 0:
+            best_detection = keypoints_data[0]  # Take first (best) detection
+            
+            # Add per-keypoint confidence scores
+            for i, kpt in enumerate(best_detection):
+                if len(kpt) >= 3:
+                    conf = float(kpt[2])
+                    metrics[f'point_{i}_confidence'] = conf
+    
+    return metrics
+
+
+def create_predictions_csv(model, test_images_path, output_csv_path):
+    """
+    Run inference on all test images and create a CSV with per-image metrics.
+    
+    Args:
+        model: YOLO model
+        test_images_path: Path to test images directory
+        output_csv_path: Path to save the output CSV
+    """
+    if not Path(test_images_path).is_dir():
+        print(f"Test images directory not found: {test_images_path}")
+        return None
+    
+    # Collect images
+    img_exts = {'.jpg', '.jpeg', '.png', '.bmp'}
+    images = sorted([p for p in Path(test_images_path).iterdir() if p.suffix.lower() in img_exts])
+    
+    if not images:
+        print(f"No images found in {test_images_path}")
+        return None
+    
+    print(f"\nProcessing {len(images)} images for per-image metrics...")
+    
+    # Warm up the model with a dummy inference
+    print("Warming up model...")
+    _ = model(str(images[0]), imgsz=1920, verbose=False)
+    
+    all_metrics = []
+    
+    for idx, img_path in enumerate(images):
+        if (idx + 1) % max(1, len(images) // 10) == 0:
+            print(f"  Progress: {idx + 1}/{len(images)}")
+        
+        # Run inference with timing
+        t0 = time.perf_counter()
+        results = model(str(img_path), imgsz=1920, verbose=False)
+        t1 = time.perf_counter()
+        
+        dt = t1 - t0
+        hz = (1.0 / dt) if dt > 0 else float('inf')
+        
+        if results and len(results) > 0:
+            pred = results[0]
+            metrics = extract_keypoint_accuracy(pred, None, img_path, model)
+            metrics['time_ms'] = dt * 1000  # Convert to milliseconds
+            metrics['hz'] = hz
+            all_metrics.append(metrics)
+        else:
+            # No detection
+            all_metrics.append({
+                'image': Path(img_path).name,
+                'score': 0.0,
+                'time_ms': dt * 1000,
+                'hz': hz,
+            })
+    
+    # Determine all possible fieldnames
+    fieldnames = ['image', 'score', 'time_ms', 'hz']
+    for metrics in all_metrics:
+        for key in metrics.keys():
+            if key not in fieldnames:
+                fieldnames.append(key)
+    
+    # Write CSV
+    output_path = Path(output_csv_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    with open(output_path, 'w', newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(all_metrics)
+    
+    print(f"\nPer-image metrics CSV saved to: {output_path}")
+    return output_path
 
 
 def main():
@@ -69,9 +188,10 @@ def main():
     else:
         print(f"\n Results saved to: runs/detect/ (default location)")
 
-    # Per-image timing and throughput (Hz)
+    # Create per-image metrics CSV
+    print("\nGenerating per-image metrics CSV...")
     try:
-        data_yaml_path = Path(data_to_use)
+        data_yaml_path = Path(args.data)
         with open(data_yaml_path, 'r') as f:
             data_cfg = yaml.safe_load(f)
         test_entry = data_cfg.get('test')
@@ -129,7 +249,11 @@ def main():
                 if not images:
                     print(f"No images found under {test_path}; skipping per-image timing.")
                 else:
-                    print("\n Per-image timing (single-image inference):")
+                    # Create CSV with per-image metrics
+                    csv_output_path = save_dir / 'per_image_metrics.csv'
+                    create_predictions_csv(model, test_path, csv_output_path)
+                    
+                    print("\n Per-image timing (single-image inference at imgsz=1280):")
                     times = []
                     for img in images:
                         t0 = time.perf_counter()
