@@ -30,6 +30,19 @@ df = df.merge(metrics_df, left_on='image_name', right_on='image', how='left')
 # Calculate mean confidence of points 0 and 2 (base of triangle)
 df['point_0_2_mean_confidence'] = (df['point_0_confidence'] + df['point_2_confidence']) / 2
 
+# Load heading debug metrics to get v2_confidence overall values
+debug_json_path = Path("runs/test-orientation/yolo11n-panther_v1-pose-v1/heading_debug_metrics.json")
+with open(debug_json_path, 'r') as f:
+    debug_data = json.load(f)
+
+# Extract v2_confidence.overall values
+v2_confidence_dict = {}
+for record in debug_data['records']:
+    image_name = record['image_name']
+    v2_confidence_dict[image_name] = record['v2_confidence']['overall']
+
+df['v2_confidence_overall'] = df['image_name'].map(v2_confidence_dict)
+
 # Create output directory if it doesn't exist
 output_dir = Path("runs/test-orientation/yolo11n-panther_v1-pose-v1/performance_metrics")
 output_dir.mkdir(parents=True, exist_ok=True)
@@ -147,7 +160,29 @@ plt.savefig(output_dir / '06_base_confidence_distribution.png', dpi=300, bbox_in
 print("✓ Saved: 06_base_confidence_distribution.png")
 plt.close()
 
-# 7. Inference Time Distribution
+# 7. Angular Error vs V2 Confidence Overall
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.scatter(df['v2_confidence_overall'], df['angular_error_deg'], alpha=0.6, s=80, 
+           edgecolors='black', color='#e74c3c')
+# Add trend line
+valid_mask = df['v2_confidence_overall'].notna()
+if valid_mask.sum() > 1:
+    z = np.polyfit(df.loc[valid_mask, 'v2_confidence_overall'], 
+                   df.loc[valid_mask, 'angular_error_deg'], 1)
+    p = np.poly1d(z)
+    x_sorted = df.loc[valid_mask, 'v2_confidence_overall'].sort_values()
+    ax.plot(x_sorted, p(x_sorted), "r--", linewidth=2, label='Trend')
+ax.set_xlabel('V2 Confidence Overall', fontsize=12)
+ax.set_ylabel('Angular Error (degrees)', fontsize=12)
+ax.set_title('Angular Error vs V2 Confidence Overall', fontsize=14, fontweight='bold')
+ax.legend(fontsize=11)
+ax.grid(alpha=0.3)
+plt.tight_layout()
+plt.savefig(output_dir / '07_angular_error_vs_v2_confidence.png', dpi=300, bbox_inches='tight')
+print("✓ Saved: 07_angular_error_vs_v2_confidence.png")
+plt.close()
+
+# 8. Inference Time Distribution
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.hist(df['time_ms'], bins=15, color='steelblue', edgecolor='black', alpha=0.7)
 ax.axvline(df['time_ms'].mean(), color='red', linestyle='--', linewidth=2, 
@@ -160,11 +195,11 @@ ax.set_title('Inference Time Distribution', fontsize=14, fontweight='bold')
 ax.legend(fontsize=11)
 ax.grid(alpha=0.3)
 plt.tight_layout()
-plt.savefig(output_dir / '07_inference_time_distribution.png', dpi=300, bbox_inches='tight')
-print("✓ Saved: 07_inference_time_distribution.png")
+plt.savefig(output_dir / '08_inference_time_distribution.png', dpi=300, bbox_inches='tight')
+print("✓ Saved: 08_inference_time_distribution.png")
 plt.close()
 
-# 8. Statistics Summary
+# 9. Statistics Summary
 fig, ax = plt.subplots(figsize=(10, 10))
 ax.axis('off')
 
@@ -214,8 +249,8 @@ QUALITY BREAKDOWN:
 ax.text(0.5, 0.5, stats_text, fontsize=10, verticalalignment='center', horizontalalignment='center',
         family='monospace', bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8, pad=1))
 plt.tight_layout()
-plt.savefig(output_dir / '08_statistics_summary.png', dpi=300, bbox_inches='tight')
-print("✓ Saved: 08_statistics_summary.png")
+plt.savefig(output_dir / '09_statistics_summary.png', dpi=300, bbox_inches='tight')
+print("✓ Saved: 09_statistics_summary.png")
 plt.close()
 
 print(f"\n✓ All visualizations saved to: {output_dir}")
