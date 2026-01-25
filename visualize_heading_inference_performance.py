@@ -19,6 +19,17 @@ df = pd.DataFrame(predictions)
 df['angular_error_deg'] = df['angular_error_deg'].astype(float)
 df['heading_confidence'] = df['heading_confidence'].astype(float)
 
+# Load per-image metrics CSV
+csv_path = Path("runs/test-evaluation/yolo11n-panther_v1-pose-v1/per_image_metrics.csv")
+metrics_df = pd.read_csv(csv_path)
+
+# Extract image names from predictions and merge with metrics
+df['image_name'] = df['image_file'].apply(lambda x: Path(x).name)
+df = df.merge(metrics_df, left_on='image_name', right_on='image', how='left')
+
+# Calculate mean confidence of points 0 and 2 (base of triangle)
+df['point_0_2_mean_confidence'] = (df['point_0_confidence'] + df['point_2_confidence']) / 2
+
 # Create output directory if it doesn't exist
 output_dir = Path("runs/test-orientation/yolo11n-panther_v1-pose-v1/performance_metrics")
 output_dir.mkdir(parents=True, exist_ok=True)
@@ -102,32 +113,109 @@ plt.savefig(output_dir / '04_inferred_vs_ground_truth.png', dpi=300, bbox_inches
 print("✓ Saved: 04_inferred_vs_ground_truth.png")
 plt.close()
 
-# 5. Statistics Summary
-fig, ax = plt.subplots(figsize=(10, 8))
+# 5. Detection Accuracy Score Distribution
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.hist(df['score'], bins=15, color='mediumseagreen', edgecolor='black', alpha=0.7)
+ax.axvline(df['score'].mean(), color='red', linestyle='--', linewidth=2, 
+           label=f"Mean: {df['score'].mean():.4f}")
+ax.axvline(df['score'].median(), color='green', linestyle='--', linewidth=2, 
+           label=f"Median: {df['score'].median():.4f}")
+ax.set_xlabel('Detection Accuracy Score', fontsize=12)
+ax.set_ylabel('Frequency', fontsize=12)
+ax.set_title('Detection Accuracy Score Distribution', fontsize=14, fontweight='bold')
+ax.legend(fontsize=11)
+ax.grid(alpha=0.3)
+plt.tight_layout()
+plt.savefig(output_dir / '05_detection_score_distribution.png', dpi=300, bbox_inches='tight')
+print("✓ Saved: 05_detection_score_distribution.png")
+plt.close()
+
+# 6. Base Triangle Point Confidence Distribution
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.hist(df['point_0_2_mean_confidence'], bins=15, color='mediumpurple', edgecolor='black', alpha=0.7)
+ax.axvline(df['point_0_2_mean_confidence'].mean(), color='red', linestyle='--', linewidth=2, 
+           label=f"Mean: {df['point_0_2_mean_confidence'].mean():.4f}")
+ax.axvline(df['point_0_2_mean_confidence'].median(), color='green', linestyle='--', linewidth=2, 
+           label=f"Median: {df['point_0_2_mean_confidence'].median():.4f}")
+ax.set_xlabel('Mean Confidence (Points 0 & 2)', fontsize=12)
+ax.set_ylabel('Frequency', fontsize=12)
+ax.set_title('Base Triangle Point Confidence Distribution', fontsize=14, fontweight='bold')
+ax.legend(fontsize=11)
+ax.grid(alpha=0.3)
+plt.tight_layout()
+plt.savefig(output_dir / '06_base_confidence_distribution.png', dpi=300, bbox_inches='tight')
+print("✓ Saved: 06_base_confidence_distribution.png")
+plt.close()
+
+# 7. Inference Time Distribution
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.hist(df['time_ms'], bins=15, color='steelblue', edgecolor='black', alpha=0.7)
+ax.axvline(df['time_ms'].mean(), color='red', linestyle='--', linewidth=2, 
+           label=f"Mean: {df['time_ms'].mean():.2f} ms")
+ax.axvline(df['time_ms'].median(), color='green', linestyle='--', linewidth=2, 
+           label=f"Median: {df['time_ms'].median():.2f} ms")
+ax.set_xlabel('Inference Time (ms)', fontsize=12)
+ax.set_ylabel('Frequency', fontsize=12)
+ax.set_title('Inference Time Distribution', fontsize=14, fontweight='bold')
+ax.legend(fontsize=11)
+ax.grid(alpha=0.3)
+plt.tight_layout()
+plt.savefig(output_dir / '07_inference_time_distribution.png', dpi=300, bbox_inches='tight')
+print("✓ Saved: 07_inference_time_distribution.png")
+plt.close()
+
+# 8. Statistics Summary
+fig, ax = plt.subplots(figsize=(10, 10))
 ax.axis('off')
-stats_text = f"""
-HEADING ESTIMATION PERFORMANCE SUMMARY
+
+# Calculate additional statistics
+time_stats = f"""Mean: {df['time_ms'].mean():.2f} ms
+Median: {df['time_ms'].median():.2f} ms
+Min: {df['time_ms'].min():.2f} ms
+Max: {df['time_ms'].max():.2f} ms"""
+
+score_stats = f"""Mean: {df['score'].mean():.4f}
+Median: {df['score'].median():.4f}
+Min: {df['score'].min():.4f}
+Max: {df['score'].max():.4f}"""
+
+base_conf_stats = f"""Mean: {df['point_0_2_mean_confidence'].mean():.4f}
+Median: {df['point_0_2_mean_confidence'].median():.4f}
+Min: {df['point_0_2_mean_confidence'].min():.4f}
+Max: {df['point_0_2_mean_confidence'].max():.4f}"""
+
+quality_dist = metadata['quality_distribution']
+stats_text = f"""HEADING ESTIMATION PERFORMANCE SUMMARY
 
 Total Predictions: {metadata['total_predictions']}
 
-Mean Angular Error: {metadata['mean_angular_error_deg']:.2f}°
-Median Angular Error: {metadata['median_angular_error_deg']:.2f}°
-Std Deviation: {metadata['std_deviation_deg']:.2f}°
+ANGULAR ERROR:
+  Mean: {metadata['mean_angular_error_deg']:.2f}°
+  Median: {metadata['median_angular_error_deg']:.2f}°
+  Std Dev: {metadata['std_deviation_deg']:.2f}°
+  Min: {metadata['min_angular_error_deg']:.2f}°
+  Max: {metadata['max_angular_error_deg']:.2f}°
 
-Min Error: {metadata['min_angular_error_deg']:.2f}°
-Max Error: {metadata['max_angular_error_deg']:.2f}°
+INFERENCE TIME:
+{time_stats}
 
-Quality Breakdown:
+DETECTION ACCURACY SCORE:
+{score_stats}
+
+BASE TRIANGLE CONFIDENCE (Points 0 & 2):
+{base_conf_stats}
+
+QUALITY BREAKDOWN:
   • Excellent (0-3°): {quality_dist['excellent_0_to_3deg']} ({100*quality_dist['excellent_0_to_3deg']/metadata['total_predictions']:.1f}%)
   • Very Good (3-5°): {quality_dist['very_good_3_to_5deg']} ({100*quality_dist['very_good_3_to_5deg']/metadata['total_predictions']:.1f}%)
   • Good (5-10°): {quality_dist['good_5_to_10deg']} ({100*quality_dist['good_5_to_10deg']/metadata['total_predictions']:.1f}%)
   • Poor (>10°): {quality_dist['poor_above_10deg']} ({100*quality_dist['poor_above_10deg']/metadata['total_predictions']:.1f}%)
 """
-ax.text(0.5, 0.5, stats_text, fontsize=12, verticalalignment='center', horizontalalignment='center',
+ax.text(0.5, 0.5, stats_text, fontsize=10, verticalalignment='center', horizontalalignment='center',
         family='monospace', bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8, pad=1))
 plt.tight_layout()
-plt.savefig(output_dir / '05_statistics_summary.png', dpi=300, bbox_inches='tight')
-print("✓ Saved: 05_statistics_summary.png")
+plt.savefig(output_dir / '08_statistics_summary.png', dpi=300, bbox_inches='tight')
+print("✓ Saved: 08_statistics_summary.png")
 plt.close()
 
 print(f"\n✓ All visualizations saved to: {output_dir}")
