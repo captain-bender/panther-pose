@@ -1,0 +1,91 @@
+========================================================================
+TIMING SUMMARY (computation only, excluding GT & JSON & file I/O)
+========================================================================
+Inference configuration: imgsz=1920, conf=0.5, device=0, verbose=False
+========================================================================
+
+Inference times (40 images, imgsz=1920, conf=0.5):
+  Mean:      30.82 ms
+  Median:    30.57 ms
+  Min:       29.48 ms
+  Max:       37.65 ms
+  Std:        1.38 ms
+
+Post-processing times (40 images, heading computation only):
+  Mean:       9.83 ms
+  Median:     9.68 ms
+  Min:        7.79 ms
+  Max:       14.52 ms
+  Std:        1.49 ms
+
+Total times per image (40 images, excluding GT & JSON & file I/O):
+  Mean:      41.56 ms
+  Median:    41.33 ms
+  Min:       39.24 ms
+  Max:       48.38 ms
+  Std:        2.02 ms
+========================================================================
+
+V1 summary:
+
+========================================================================
+HEADING ERROR SUMMARY (perpendicular-to-base; 0=left, 90=down)
+========================================================================
+Samples (pose matches): 40
+
+Metric                         Value
+--------------------------------------
+Mean abs error (°)                  2.81
+Median abs error (°)                2.35
+Std abs error (°)                   2.10
+P90 abs error (°)                   6.24
+P95 abs error (°)                   6.93
+Min / Max abs error (°)             0.32 /    10.17
+Mean signed error (°)               0.85
+Median signed error (°)             0.87
+Within 5° / 10° (%)                 87.5 /    97.5
+========================================================================
+
+V2 summary:
+
+========================================================================
+HEADING ERROR SUMMARY (perpendicular-to-base; 0=left, 90=down)
+========================================================================
+Samples (pose matches): 40
+
+Metric                         Value
+--------------------------------------
+Mean abs error (°)                  1.81
+Median abs error (°)                1.58
+Std abs error (°)                   1.05
+P90 abs error (°)                   3.14
+P95 abs error (°)                   3.79
+Min / Max abs error (°)             0.05 /     4.21
+Mean signed error (°)               0.87
+Median signed error (°)             1.19
+Within 5° / 10° (%)                100.0 /   100.0
+========================================================================
+
+Estimated V2 heading bias (pred-gt): +0.865°
+
+V2 summary (bias-corrected):
+
+========================================================================
+HEADING ERROR SUMMARY (perpendicular-to-base; 0=left, 90=down)
+========================================================================
+Samples (pose matches): 40
+
+Metric                         Value
+--------------------------------------
+Mean abs error (°)                  1.57
+Median abs error (°)                1.50
+Std abs error (°)                   1.09
+P90 abs error (°)                   3.03
+P95 abs error (°)                   3.36
+Min / Max abs error (°)             0.11 /     3.72
+Mean signed error (°)              -0.00
+Median signed error (°)             0.33
+Within 5° / 10° (%)                100.0 /   100.0
+========================================================================
+
+Wrote per-image headings JSON: runs\test-orientation\yolo11n-panther_v1-pose-v1\heading_debug.json
