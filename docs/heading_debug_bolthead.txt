@@ -1,0 +1,667 @@
+Testing on individual images...
+   Ground truth: 1 pose(s) found
+
+ Processing: position_618_png.rf.e2ac08342f4d29f6b251bccc1f6b91ed.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_618_png.rf.e2ac08342f4d29f6b251bccc1f6b91ed.jpg: 1216x1920 1 robot, 44.0ms
+Speed: 6.5ms preprocess, 44.0ms inference, 7.0ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.947, min=0.947, max=0.947
+     det[0] box conf: 0.947
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 352.2° (0=left, 90=down)
+     GT heading: 355.3° | diff: -3.1° (abs 3.1°)
+     kp[0]: x=381.5, y=346.5, conf=0.998, color(BGR)=(255, 42, 4)
+     kp[1]: x=345.5, y=305.9, conf=0.999, color(BGR)=(235, 219, 11)
+     kp[2]: x=390.8, y=278.1, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_618_png.rf.e2ac08342f4d29f6b251bccc1f6b91ed.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_426_png.rf.21885c72895747c1117741f5a0f72342.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_426_png.rf.21885c72895747c1117741f5a0f72342.jpg: 1216x1920 1 robot, 16.9ms
+Speed: 6.4ms preprocess, 16.9ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.967, min=0.967, max=0.967
+     det[0] box conf: 0.967
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 308.8° (0=left, 90=down)
+     GT heading: 305.4° | diff: +3.4° (abs 3.4°)
+     kp[0]: x=639.1, y=542.3, conf=0.998, color(BGR)=(255, 42, 4)
+     kp[1]: x=639.4, y=490.1, conf=0.999, color(BGR)=(235, 219, 11)
+     kp[2]: x=691.5, y=500.1, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_426_png.rf.21885c72895747c1117741f5a0f72342.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_322_png.rf.df27c73113d68792446325236aa0c8a9.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_322_png.rf.df27c73113d68792446325236aa0c8a9.jpg: 1216x1920 1 robot, 16.4ms
+Speed: 6.7ms preprocess, 16.4ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.928, min=0.928, max=0.928
+     det[0] box conf: 0.928
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 170.7° (0=left, 90=down)
+     GT heading: 174.3° | diff: -3.6° (abs 3.6°)
+     kp[0]: x=157.9, y=1097.5, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=196.0, y=1142.6, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=145.9, y=1170.7, conf=0.998, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_322_png.rf.df27c73113d68792446325236aa0c8a9.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_533_png.rf.b6f78de40666460effe37419efeed719.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_533_png.rf.b6f78de40666460effe37419efeed719.jpg: 1216x1920 1 robot, 16.4ms
+Speed: 6.2ms preprocess, 16.4ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.954, min=0.954, max=0.954
+     det[0] box conf: 0.954
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 275.5° (0=left, 90=down)
+     GT heading: 271.0° | diff: +4.6° (abs 4.6°)
+     kp[0]: x=984.4, y=402.3, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=1013.0, y=362.3, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=1052.3, y=395.7, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_533_png.rf.b6f78de40666460effe37419efeed719.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_052_png.rf.9d1d8fdb5330396c4549f7532f91d019.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_052_png.rf.9d1d8fdb5330396c4549f7532f91d019.jpg: 1216x1920 1 robot, 16.4ms
+Speed: 6.1ms preprocess, 16.4ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.934, min=0.934, max=0.934
+     det[0] box conf: 0.934
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 169.4° (0=left, 90=down)
+     GT heading: 171.1° | diff: -1.7° (abs 1.7°)
+     kp[0]: x=185.7, y=577.2, conf=1.000, color(BGR)=(255, 42, 4)
+     kp[1]: x=224.1, y=625.4, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=170.9, y=656.2, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_052_png.rf.9d1d8fdb5330396c4549f7532f91d019.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_550_png.rf.9ab66e4d3e69d526a71d85f30fbab448.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_550_png.rf.9ab66e4d3e69d526a71d85f30fbab448.jpg: 1216x1920 1 robot, 16.4ms
+Speed: 6.1ms preprocess, 16.4ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.954, min=0.954, max=0.954
+     det[0] box conf: 0.954
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 212.8° (0=left, 90=down)
+     GT heading: 208.0° | diff: +4.8° (abs 4.8°)
+     kp[0]: x=246.2, y=1041.3, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=296.1, y=1048.7, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=283.9, y=1099.9, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_550_png.rf.9ab66e4d3e69d526a71d85f30fbab448.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_194_png.rf.afa2917cce187f8e036058100c9dc14f.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_194_png.rf.afa2917cce187f8e036058100c9dc14f.jpg: 1216x1920 1 robot, 16.4ms
+Speed: 6.1ms preprocess, 16.4ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.967, min=0.967, max=0.967
+     det[0] box conf: 0.967
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 311.7° (0=left, 90=down)
+     GT heading: 306.7° | diff: +5.1° (abs 5.1°)
+     kp[0]: x=882.1, y=559.8, conf=0.998, color(BGR)=(255, 42, 4)
+     kp[1]: x=880.0, y=507.0, conf=0.999, color(BGR)=(235, 219, 11)
+     kp[2]: x=932.8, y=514.5, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_194_png.rf.afa2917cce187f8e036058100c9dc14f.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_468_png.rf.30197cea7dbc49fb0d65449b648d308b.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_468_png.rf.30197cea7dbc49fb0d65449b648d308b.jpg: 1216x1920 1 robot, 16.6ms
+Speed: 6.1ms preprocess, 16.6ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.942, min=0.942, max=0.942
+     det[0] box conf: 0.942
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 11.5° (0=left, 90=down)
+     GT heading: 15.9° | diff: -4.3° (abs 4.3°)
+     kp[0]: x=839.1, y=74.4, conf=0.998, color(BGR)=(255, 42, 4)
+     kp[1]: x=794.7, y=50.5, conf=0.999, color(BGR)=(235, 219, 11)
+     kp[2]: x=825.9, y=9.7, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_468_png.rf.30197cea7dbc49fb0d65449b648d308b.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_379_png.rf.b33f32ed5a81280b7ae19a388fecf001.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_379_png.rf.b33f32ed5a81280b7ae19a388fecf001.jpg: 1216x1920 1 robot, 16.4ms
+Speed: 6.1ms preprocess, 16.4ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.967, min=0.967, max=0.967
+     det[0] box conf: 0.967
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 238.9° (0=left, 90=down)
+     GT heading: 233.7° | diff: +5.3° (abs 5.3°)
+     kp[0]: x=1032.0, y=1069.6, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=1080.4, y=1052.1, conf=0.999, color(BGR)=(235, 219, 11)
+     kp[2]: x=1091.7, y=1105.6, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_379_png.rf.b33f32ed5a81280b7ae19a388fecf001.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_485_png.rf.67a5fab0c6273f2eedee8b6a0ae44630.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_485_png.rf.67a5fab0c6273f2eedee8b6a0ae44630.jpg: 1216x1920 1 robot, 16.4ms
+Speed: 6.0ms preprocess, 16.4ms inference, 1.2ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.932, min=0.932, max=0.932
+     det[0] box conf: 0.932
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 279.1° (0=left, 90=down)
+     GT heading: 275.5° | diff: +3.6° (abs 3.6°)
+     kp[0]: x=1761.5, y=85.5, conf=0.995, color(BGR)=(255, 42, 4)
+     kp[1]: x=1785.0, y=47.1, conf=0.998, color(BGR)=(235, 219, 11)
+     kp[2]: x=1820.8, y=76.0, conf=0.997, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_485_png.rf.67a5fab0c6273f2eedee8b6a0ae44630.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_088_png.rf.0c8d93d3cdc61b5a87d1eeeb3fb269fa.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_088_png.rf.0c8d93d3cdc61b5a87d1eeeb3fb269fa.jpg: 1216x1920 1 robot, 16.4ms
+Speed: 6.1ms preprocess, 16.4ms inference, 1.0ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.959, min=0.959, max=0.959
+     det[0] box conf: 0.959
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 143.1° (0=left, 90=down)
+     GT heading: 146.7° | diff: -3.6° (abs 3.6°)
+     kp[0]: x=685.8, y=1016.6, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=699.9, y=1065.7, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=644.1, y=1072.2, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_088_png.rf.0c8d93d3cdc61b5a87d1eeeb3fb269fa.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_232_png.rf.6c099ff997cd84aad572039ee97959a3.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_232_png.rf.6c099ff997cd84aad572039ee97959a3.jpg: 1216x1920 1 robot, 16.4ms
+Speed: 6.7ms preprocess, 16.4ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.967, min=0.967, max=0.967
+     det[0] box conf: 0.967
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 317.1° (0=left, 90=down)
+     GT heading: 315.0° | diff: +2.1° (abs 2.1°)
+     kp[0]: x=1510.6, y=1168.1, conf=0.997, color(BGR)=(255, 42, 4)
+     kp[1]: x=1504.1, y=1114.9, conf=0.999, color(BGR)=(235, 219, 11)
+     kp[2]: x=1556.5, y=1118.7, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_232_png.rf.6c099ff997cd84aad572039ee97959a3.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_298_png.rf.9e11f8528f8e9e5202be67ebe4c82b6c.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_298_png.rf.9e11f8528f8e9e5202be67ebe4c82b6c.jpg: 1216x1920 1 robot, 17.0ms
+Speed: 6.9ms preprocess, 17.0ms inference, 1.2ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.952, min=0.952, max=0.952
+     det[0] box conf: 0.952
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 31.8° (0=left, 90=down)
+     GT heading: 34.4° | diff: -2.7° (abs 2.7°)
+     kp[0]: x=519.8, y=515.4, conf=0.998, color(BGR)=(255, 42, 4)
+     kp[1]: x=471.9, y=507.9, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=486.9, y=462.3, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_298_png.rf.9e11f8528f8e9e5202be67ebe4c82b6c.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_585_png.rf.f172093095556756cc9210a1db159f2d.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_585_png.rf.f172093095556756cc9210a1db159f2d.jpg: 1216x1920 1 robot, 16.4ms
+Speed: 7.0ms preprocess, 16.4ms inference, 1.0ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.967, min=0.967, max=0.967
+     det[0] box conf: 0.967
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 151.8° (0=left, 90=down)
+     GT heading: 151.8° | diff: +0.1° (abs 0.1°)
+     kp[0]: x=569.8, y=584.7, conf=1.000, color(BGR)=(255, 42, 4)
+     kp[1]: x=592.9, y=635.5, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=535.4, y=649.0, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_585_png.rf.f172093095556756cc9210a1db159f2d.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_624_png.rf.160b1d51788ed8835b2cf4fb7970838b.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_624_png.rf.160b1d51788ed8835b2cf4fb7970838b.jpg: 1216x1920 1 robot, 16.1ms
+Speed: 6.2ms preprocess, 16.1ms inference, 1.0ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.946, min=0.946, max=0.946
+     det[0] box conf: 0.946
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 70.6° (0=left, 90=down)
+     GT heading: 73.2° | diff: -2.6° (abs 2.6°)
+     kp[0]: x=1478.8, y=256.4, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=1436.3, y=280.3, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=1416.6, y=234.5, conf=1.000, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_624_png.rf.160b1d51788ed8835b2cf4fb7970838b.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_045_png.rf.45835db568a6d9b54727c5abb87f2deb.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_045_png.rf.45835db568a6d9b54727c5abb87f2deb.jpg: 1216x1920 1 robot, 15.9ms
+Speed: 5.9ms preprocess, 15.9ms inference, 1.0ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.961, min=0.961, max=0.961
+     det[0] box conf: 0.961
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 113.3° (0=left, 90=down)
+     GT heading: 120.3° | diff: -7.1° (abs 7.1°)
+     kp[0]: x=1824.7, y=1016.9, conf=1.000, color(BGR)=(255, 42, 4)
+     kp[1]: x=1810.0, y=1063.8, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=1759.5, y=1044.9, conf=1.000, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_045_png.rf.45835db568a6d9b54727c5abb87f2deb.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_487_png.rf.cd0636cb786fb7292a48091004de7b27.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_487_png.rf.cd0636cb786fb7292a48091004de7b27.jpg: 1216x1920 1 robot, 16.0ms
+Speed: 6.5ms preprocess, 16.0ms inference, 1.3ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.961, min=0.961, max=0.961
+     det[0] box conf: 0.961
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 226.3° (0=left, 90=down)
+     GT heading: 218.8° | diff: +7.4° (abs 7.4°)
+     kp[0]: x=308.3, y=915.7, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=356.9, y=911.9, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=358.2, y=963.5, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_487_png.rf.cd0636cb786fb7292a48091004de7b27.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_597_png.rf.a27bbf92894bfe2441ee1781076bb533.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_597_png.rf.a27bbf92894bfe2441ee1781076bb533.jpg: 1216x1920 1 robot, 16.0ms
+Speed: 6.8ms preprocess, 16.0ms inference, 1.2ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.957, min=0.957, max=0.957
+     det[0] box conf: 0.957
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 263.4° (0=left, 90=down)
+     GT heading: 262.7° | diff: +0.7° (abs 0.7°)
+     kp[0]: x=442.1, y=568.0, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=481.3, y=529.8, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=512.2, y=576.0, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_597_png.rf.a27bbf92894bfe2441ee1781076bb533.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_285_png.rf.c75d6e2f0ae2581aa7ce0ff0fa1b8afa.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_285_png.rf.c75d6e2f0ae2581aa7ce0ff0fa1b8afa.jpg: 1216x1920 1 robot, 16.1ms
+Speed: 6.6ms preprocess, 16.1ms inference, 1.2ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.966, min=0.966, max=0.966
+     det[0] box conf: 0.966
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 63.8° (0=left, 90=down)
+     GT heading: 61.5° | diff: +2.3° (abs 2.3°)
+     kp[0]: x=1248.7, y=56.6, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=1203.2, y=75.4, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=1191.1, y=28.3, conf=1.000, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_285_png.rf.c75d6e2f0ae2581aa7ce0ff0fa1b8afa.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_419_png.rf.99bd05aff3f2f698da34bbfd011302d3.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_419_png.rf.99bd05aff3f2f698da34bbfd011302d3.jpg: 1216x1920 1 robot, 18.9ms
+Speed: 7.6ms preprocess, 18.9ms inference, 1.3ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.958, min=0.958, max=0.958
+     det[0] box conf: 0.958
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 18.9° (0=left, 90=down)
+     GT heading: 21.2° | diff: -2.3° (abs 2.3°)
+     kp[0]: x=901.4, y=1104.0, conf=0.998, color(BGR)=(255, 42, 4)
+     kp[1]: x=853.8, y=1085.1, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=880.2, y=1042.0, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_419_png.rf.99bd05aff3f2f698da34bbfd011302d3.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_387_png.rf.ea960d86cce4d5f5e9d69fb40225951c.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_387_png.rf.ea960d86cce4d5f5e9d69fb40225951c.jpg: 1216x1920 1 robot, 18.5ms
+Speed: 6.1ms preprocess, 18.5ms inference, 1.4ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.956, min=0.956, max=0.956
+     det[0] box conf: 0.956
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 245.3° (0=left, 90=down)
+     GT heading: 244.6° | diff: +0.7° (abs 0.7°)
+     kp[0]: x=163.7, y=933.3, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=208.6, y=911.3, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=224.3, y=961.2, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_387_png.rf.ea960d86cce4d5f5e9d69fb40225951c.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_474_png.rf.c440ac4e6623065af3d9688667073de8.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_474_png.rf.c440ac4e6623065af3d9688667073de8.jpg: 1216x1920 1 robot, 16.0ms
+Speed: 6.4ms preprocess, 16.0ms inference, 1.2ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.952, min=0.952, max=0.952
+     det[0] box conf: 0.952
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 276.1° (0=left, 90=down)
+     GT heading: 272.6° | diff: +3.5° (abs 3.5°)
+     kp[0]: x=970.1, y=116.1, conf=0.998, color(BGR)=(255, 42, 4)
+     kp[1]: x=998.5, y=75.6, conf=0.999, color(BGR)=(235, 219, 11)
+     kp[2]: x=1038.3, y=108.7, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_474_png.rf.c440ac4e6623065af3d9688667073de8.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_579_png.rf.bf23a4d9dd88ee59049f8ad3f3353032.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_579_png.rf.bf23a4d9dd88ee59049f8ad3f3353032.jpg: 1216x1920 1 robot, 15.9ms
+Speed: 5.9ms preprocess, 15.9ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.953, min=0.953, max=0.953
+     det[0] box conf: 0.953
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 75.2° (0=left, 90=down)
+     GT heading: 71.0° | diff: +4.2° (abs 4.2°)
+     kp[0]: x=91.8, y=794.3, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=49.5, y=822.7, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=26.8, y=777.1, conf=1.000, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_579_png.rf.bf23a4d9dd88ee59049f8ad3f3353032.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_069_png.rf.7b2fc582cc6b141d46e0a942340e833f.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_069_png.rf.7b2fc582cc6b141d46e0a942340e833f.jpg: 1216x1920 1 robot, 16.0ms
+Speed: 6.1ms preprocess, 16.0ms inference, 0.9ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.959, min=0.959, max=0.959
+     det[0] box conf: 0.959
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 236.6° (0=left, 90=down)
+     GT heading: 234.8° | diff: +1.8° (abs 1.8°)
+     kp[0]: x=350.9, y=598.5, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=400.3, y=583.6, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=409.5, y=637.1, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_069_png.rf.7b2fc582cc6b141d46e0a942340e833f.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_508_png.rf.26acd065ad97068a1454a4c3ad501b1b.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_508_png.rf.26acd065ad97068a1454a4c3ad501b1b.jpg: 1216x1920 1 robot, 16.0ms
+Speed: 6.4ms preprocess, 16.0ms inference, 1.3ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.946, min=0.946, max=0.946
+     det[0] box conf: 0.946
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 272.1° (0=left, 90=down)
+     GT heading: 269.7° | diff: +2.4° (abs 2.4°)
+     kp[0]: x=1373.6, y=169.8, conf=0.997, color(BGR)=(255, 42, 4)
+     kp[1]: x=1403.7, y=130.7, conf=0.999, color(BGR)=(235, 219, 11)
+     kp[2]: x=1438.8, y=167.4, conf=0.998, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_508_png.rf.26acd065ad97068a1454a4c3ad501b1b.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_063_png.rf.c80eec36cc747e2ad818b5a5bf68c53f.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_063_png.rf.c80eec36cc747e2ad818b5a5bf68c53f.jpg: 1216x1920 1 robot, 16.0ms
+Speed: 6.5ms preprocess, 16.0ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.942, min=0.942, max=0.942
+     det[0] box conf: 0.942
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 161.8° (0=left, 90=down)
+     GT heading: 158.4° | diff: +3.4° (abs 3.4°)
+     kp[0]: x=437.4, y=993.6, conf=1.000, color(BGR)=(255, 42, 4)
+     kp[1]: x=468.5, y=1041.6, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=414.0, y=1064.8, conf=1.000, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_063_png.rf.c80eec36cc747e2ad818b5a5bf68c53f.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_059_png.rf.7ec3f0361de8b6189e8d5c234c9a23ad.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_059_png.rf.7ec3f0361de8b6189e8d5c234c9a23ad.jpg: 1216x1920 1 robot, 16.0ms
+Speed: 6.6ms preprocess, 16.0ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.958, min=0.958, max=0.958
+     det[0] box conf: 0.958
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 118.0° (0=left, 90=down)
+     GT heading: 125.1° | diff: -7.1° (abs 7.1°)
+     kp[0]: x=367.2, y=935.1, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=355.5, y=980.7, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=311.2, y=964.9, conf=1.000, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_059_png.rf.7ec3f0361de8b6189e8d5c234c9a23ad.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_167_png.rf.46acf026c596bb034da6311585dd692e.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_167_png.rf.46acf026c596bb034da6311585dd692e.jpg: 1216x1920 1 robot, 16.1ms
+Speed: 6.0ms preprocess, 16.1ms inference, 1.0ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.960, min=0.960, max=0.960
+     det[0] box conf: 0.960
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 229.2° (0=left, 90=down)
+     GT heading: 224.3° | diff: +4.9° (abs 4.9°)
+     kp[0]: x=508.5, y=246.7, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=559.1, y=239.8, conf=0.999, color(BGR)=(235, 219, 11)
+     kp[2]: x=562.8, y=293.6, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_167_png.rf.46acf026c596bb034da6311585dd692e.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_407_png.rf.bac986e98e2d3c2c93adaf571f86816d.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_407_png.rf.bac986e98e2d3c2c93adaf571f86816d.jpg: 1216x1920 1 robot, 15.9ms
+Speed: 6.1ms preprocess, 15.9ms inference, 1.0ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.969, min=0.969, max=0.969
+     det[0] box conf: 0.969
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 312.2° (0=left, 90=down)
+     GT heading: 306.4° | diff: +5.7° (abs 5.7°)
+     kp[0]: x=370.4, y=223.0, conf=0.998, color(BGR)=(255, 42, 4)
+     kp[1]: x=368.5, y=169.3, conf=0.999, color(BGR)=(235, 219, 11)
+     kp[2]: x=420.7, y=177.4, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_407_png.rf.bac986e98e2d3c2c93adaf571f86816d.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_458_png.rf.8f46c4a59d0fb3b095cb2a6dd4ed1efb.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_458_png.rf.8f46c4a59d0fb3b095cb2a6dd4ed1efb.jpg: 1216x1920 1 robot, 15.9ms
+Speed: 6.1ms preprocess, 15.9ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.966, min=0.966, max=0.966
+     det[0] box conf: 0.966
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 96.0° (0=left, 90=down)
+     GT heading: 99.7° | diff: -3.6° (abs 3.6°)
+     kp[0]: x=691.1, y=503.6, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=660.6, y=546.0, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=620.7, y=511.1, conf=1.000, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_458_png.rf.8f46c4a59d0fb3b095cb2a6dd4ed1efb.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_076_png.rf.6e89d6676611769cf93cffc7e3c92d01.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_076_png.rf.6e89d6676611769cf93cffc7e3c92d01.jpg: 1216x1920 1 robot, 15.9ms
+Speed: 6.3ms preprocess, 15.9ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.945, min=0.945, max=0.945
+     det[0] box conf: 0.945
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 38.6° (0=left, 90=down)
+     GT heading: 37.1° | diff: +1.5° (abs 1.5°)
+     kp[0]: x=1004.2, y=706.4, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=956.8, y=705.2, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=964.5, y=656.7, conf=1.000, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_076_png.rf.6e89d6676611769cf93cffc7e3c92d01.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_402_png.rf.69d6861e786e8bf8c945f62d3c25a643.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_402_png.rf.69d6861e786e8bf8c945f62d3c25a643.jpg: 1216x1920 1 robot, 16.0ms
+Speed: 5.9ms preprocess, 16.0ms inference, 1.7ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.956, min=0.956, max=0.956
+     det[0] box conf: 0.956
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 206.4° (0=left, 90=down)
+     GT heading: 201.9° | diff: +4.4° (abs 4.4°)
+     kp[0]: x=699.0, y=618.8, conf=1.000, color(BGR)=(255, 42, 4)
+     kp[1]: x=749.5, y=631.4, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=730.4, y=682.1, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_402_png.rf.69d6861e786e8bf8c945f62d3c25a643.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_246_png.rf.f233839c97183153dca0d1d11a8e16c0.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_246_png.rf.f233839c97183153dca0d1d11a8e16c0.jpg: 1216x1920 1 robot, 15.9ms
+Speed: 6.1ms preprocess, 15.9ms inference, 1.2ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.960, min=0.960, max=0.960
+     det[0] box conf: 0.960
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 118.0° (0=left, 90=down)
+     GT heading: 122.8° | diff: -4.8° (abs 4.8°)
+     kp[0]: x=946.7, y=723.4, conf=1.000, color(BGR)=(255, 42, 4)
+     kp[1]: x=936.3, y=769.2, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=888.7, y=754.2, conf=1.000, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_246_png.rf.f233839c97183153dca0d1d11a8e16c0.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_361_png.rf.96f62f73f5041307675032ca1614cb42.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_361_png.rf.96f62f73f5041307675032ca1614cb42.jpg: 1216x1920 1 robot, 16.0ms
+Speed: 6.3ms preprocess, 16.0ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.948, min=0.948, max=0.948
+     det[0] box conf: 0.948
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 218.4° (0=left, 90=down)
+     GT heading: 211.9° | diff: +6.5° (abs 6.5°)
+     kp[0]: x=375.9, y=542.0, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=427.7, y=546.0, conf=0.999, color(BGR)=(235, 219, 11)
+     kp[2]: x=420.6, y=598.3, conf=0.998, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_361_png.rf.96f62f73f5041307675032ca1614cb42.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_029_png.rf.6df1a8ebc55513e238570937a09e825e.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_029_png.rf.6df1a8ebc55513e238570937a09e825e.jpg: 1216x1920 1 robot, 15.9ms
+Speed: 6.5ms preprocess, 15.9ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.960, min=0.960, max=0.960
+     det[0] box conf: 0.960
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 85.4° (0=left, 90=down)
+     GT heading: 89.6° | diff: -4.2° (abs 4.2°)
+     kp[0]: x=445.3, y=445.7, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=407.4, y=482.3, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=374.5, y=440.1, conf=1.000, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_029_png.rf.6df1a8ebc55513e238570937a09e825e.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_156_png.rf.c8e83c96a93b3e43803529b5396c780f.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_156_png.rf.c8e83c96a93b3e43803529b5396c780f.jpg: 1216x1920 1 robot, 16.0ms
+Speed: 6.2ms preprocess, 16.0ms inference, 1.2ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.959, min=0.959, max=0.959
+     det[0] box conf: 0.959
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 253.2° (0=left, 90=down)
+     GT heading: 250.0° | diff: +3.2° (abs 3.2°)
+     kp[0]: x=112.2, y=464.7, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=158.0, y=434.1, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=180.2, y=485.2, conf=1.000, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_156_png.rf.c8e83c96a93b3e43803529b5396c780f.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_009_png.rf.d5d56f34d86a3e9e77b9d76b685845b0.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_009_png.rf.d5d56f34d86a3e9e77b9d76b685845b0.jpg: 1216x1920 1 robot, 16.0ms
+Speed: 8.6ms preprocess, 16.0ms inference, 1.0ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.934, min=0.934, max=0.934
+     det[0] box conf: 0.934
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 122.6° (0=left, 90=down)
+     GT heading: 123.0° | diff: -0.4° (abs 0.4°)
+     kp[0]: x=641.6, y=1111.5, conf=0.999, color(BGR)=(255, 42, 4)
+     kp[1]: x=637.2, y=1156.4, conf=1.000, color(BGR)=(235, 219, 11)
+     kp[2]: x=586.3, y=1146.8, conf=1.000, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_009_png.rf.d5d56f34d86a3e9e77b9d76b685845b0.jpg
+   Ground truth: 1 pose(s) found
+
+ Processing: position_191_png.rf.a5614d5819762ae43115731882ddac8f.jpg
+
+image 1/1 C:\Users\Bende\Documents\panther-pose\dataset\version-2\test\images\position_191_png.rf.a5614d5819762ae43115731882ddac8f.jpg: 1216x1920 1 robot, 16.0ms
+Speed: 7.3ms preprocess, 16.0ms inference, 1.1ms postprocess per image at shape (1, 3, 1216, 1920)
+   Detections: 1 | box conf mean=0.947, min=0.947, max=0.947
+     det[0] box conf: 0.947
+   Detected 1 pose(s)
+   Keypoints shape: torch.Size([1, 3, 2])
+   Pose 0 keypoints:
+     Heading: 262.5° (0=left, 90=down)
+     GT heading: 264.8° | diff: -2.3° (abs 2.3°)
+     kp[0]: x=813.7, y=864.2, conf=0.998, color(BGR)=(255, 42, 4)
+     kp[1]: x=850.0, y=829.5, conf=0.999, color(BGR)=(235, 219, 11)
+     kp[2]: x=880.3, y=873.0, conf=0.999, color(BGR)=(243, 243, 243)
+ Saved result: runs\test-orientation\yolo11n-panther_v2-pose-v2\position_191_png.rf.a5614d5819762ae43115731882ddac8f.jpg
+
+ Individual image testing complete!
+
+========================================================================
+HEADING ERROR SUMMARY (perpendicular-to-base; 0=left, 90=down)
+========================================================================
+Samples (pose matches): 38
+
+Metric                         Value
+--------------------------------------
+Mean abs error (°)                  3.55
+Median abs error (°)                3.54
+Std abs error (°)                   1.82
+P90 abs error (°)                   5.96
+P95 abs error (°)                   7.07
+Min / Max abs error (°)             0.05 /     7.45
+Mean signed error (°)               0.74
+Median signed error (°)             1.66
+Within 5° / 10° (%)                 81.6 /   100.0
+========================================================================
